@@ -28,6 +28,18 @@ class Cowpu < Padrino::Application
     render :haml , '%p Wow this is so rad'
   end
 
+  get '/:year/:month/:slug.html' do
+    redirect "/#{params[:slug]}", 301
+  end
+  
+  get ':post' do
+    if @post = Post.first(:slug => params[:post])
+      render 'posts/show'
+    else
+      not_found
+    end
+  end
+  
   ##
   # You can configure for a specified environment like:
   #

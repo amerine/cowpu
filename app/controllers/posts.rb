@@ -22,9 +22,4 @@ Cowpu.controllers :posts do
     @posts = Post.all
     render 'posts/index'
   end
-
-  get :show, :with => :slug do
-    @post = Post.find(:slug => params[:slug])
-  end
-
 end
