@@ -3,27 +3,15 @@ class Post
 
   # property <name>, <type>
   property :id, Serial
-  property :title, String
+  property :title, String, :required => true, :unique => true
   property :body, Text
   property :slug, String
   property :created_at, DateTime
   before :save, :generate_slug
   
   def generate_slug
-    if !self.id
-      unique_slug = false
-      new_slug = self.title.to_slug
-      counter = 0
-      while !unique_slug
-        counter += 1
-        if Post.count(:slug => new_slug) > 0
-          new_slug = "#{new_slug}-#{counter}"
-        else
-          unique_slug = true
-        end
-      end
-      self.slug = new_slug
+    if slug.nil? || slug.empty?
+      self.slug = title.downcase.gsub(/[^a-z1-9]+/, '-').chomp('-')
     end
   end
-  
 end

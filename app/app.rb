@@ -1,3 +1,6 @@
+require 'dm-core'
+require 'dm-validations'
+
 class Cowpu < Padrino::Application
   configure do
     ##
