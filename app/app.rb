@@ -21,7 +21,7 @@ class Cowpu < Padrino::Application
   end
   
   get '/' do
-    "OMG HI2U COWPU!"
+    render 'base/index'
   end
   
   get :about, :map => '/about/us' do
