@@ -2,12 +2,16 @@ module Rack
   class KonamiCode
     
     KONAMI_CODE = <<-EOTC 
+    <div id="cowpoo" style="display:none;position:fixed;top:20%;right:50%;">
+      <img src="/images/cow-poo.jpg" alt="Cow Poop!" />
+    </div>
     <script type="text/javascript" src="http://konami-js.googlecode.com/svn/trunk/konami.js"></script>
     <script type="text/javascript">
     	konami = new Konami()
     	konami.code = function() {
-    		alert("COWPU")
-    		}
+        $('#cowpoo').fadeIn('slow');
+        $('#cowpoo').fadeOut('slow');
+      }
     	konami.load()
     </script>
     EOTC
