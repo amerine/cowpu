@@ -25,6 +25,8 @@ class Account
 
   # Callbacks
   before :save, :generate_password
+  
+  has n, :posts
 
   ##
   # This method is for authentication purpose

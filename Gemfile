@@ -12,6 +12,7 @@ gem 'do_sqlite3'
 gem 'datamapper'
 gem 'dm-core'
 gem 'dm-validations'
+gem 'dm-tags'
 
 # Test requirements
 gem 'rspec', :group => "test", :require => "spec"

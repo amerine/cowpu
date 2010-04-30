@@ -3,6 +3,12 @@
   =f.error_message_on :title
   =f.text_field :title, :class => :text_field
   %span.description Ex: a simple text
+  
+.group
+  =f.label :tag_collection
+  =f.error_message_on :tag_collection
+  =f.text_field :tag_collection, :class => :text_field
+  %span.description Ex: meeting, books, fun
 
 .group
   =f.label :body

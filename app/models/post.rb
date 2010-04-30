@@ -7,7 +7,11 @@ class Post
   property :body, Text
   property :slug, String
   property :created_at, DateTime
+  property :account_id, Integer
   before :create, :generate_slug
+  
+  belongs_to :account
+  has_tags
   
   def generate_slug
     unique = false
