@@ -1,39 +1,52 @@
-!!! Strict
+!!! 5
 %html
   %head
-    %title= [@title, "Padrino Sample Blog"].compact.join(" | ")
-    = stylesheet_link_tag 'reset', 'application'
+    %title= [@title, "Central Oregon Web Professionals Usergroup"].compact.join(" | ")
+    = stylesheet_link_tag 'cowpu'
     = javascript_include_tag 'jquery', 'application'
     = yield_content :include
+    :plain
+      <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]--> 
   %body
-    #header
-      %h1{ :class => 'foo' } Sample Padrino Blog
-      %ul.menu
-        %li= link_to 'Blog', url_for(:posts, :index)
-        %li= link_to 'About', url_for(:about)
-    #container
-      :javascript
-        var foo = {};
-      #main= yield
-      #sidebar
-        - form_tag url_for(:posts, :index), :method => 'get'  do
-          Search for:
-          = text_field_tag 'query', :value => params[:query]
-          = submit_tag 'Search'
-        %p Recent Posts
-        %ul.bulleted
-          %li Item 1 - Lorem ipsum dolorum itsum estem
-          %li Item 2 - Lorem ipsum dolorum itsum estem
-          %li Item 3 - Lorem ipsum dolorum itsum estem
-        %p Categories
-        %ul.bulleted
-          %li Item 1 - Lorem ipsum dolorum itsum estem
-          %li Item 2 - Lorem ipsum dolorum itsum estem
-          %li Item 3 - Lorem ipsum dolorum itsum estem
-        %p Latest Comments
-        %ul.bulleted
-          %li Item 1 - Lorem ipsum dolorum itsum estem
-          %li Item 2 - Lorem ipsum dolorum itsum estem
-          %li Item 3 - Lorem ipsum dolorum itsum estem
-    #footer
-      Copyright (c) 2009-2010 Padri
+    %header.top-level
+      %hgroup
+        %h1 Central Oregon Web Professionals Usergroup
+        %h2 Meetings are the last Wednesday of every month
+    %nav
+      %ul
+        %li
+          %a{ :href => "#" } Nav Item 1
+        %li
+          %a{ :href => "#" } Nav Item 1
+        %li
+          %a{ :href => "#" } Nav Item 1
+    %section
+      =yield
+    %aside
+      %h2 Latest
+      %ul.latest
+        -Post.recent_posts.each do |p|
+          %li
+            %a{:href=>"/#{p.slug}"} #{p.title}
+      %h2 Badges & O'Reilly Love
+      %ul.img-list
+        %li
+          %img{:src=>"http://www.cowpu.com/files/cowHeadBadge.jpg", :alt=>"COWPU: Web Geeks Unite!", :class=>"r"}
+        %li
+          %img{:src=>"http://ug.oreilly.com/images/ads/ug_discount_120x240.gif", :alt=>"O'Reilly User group members save 35% on all titles. Enter discount code: DSUG.", :class=>"l"}
+        %li
+          %img{:src=>"http://ug.oreilly.com/banners/ug_ad_125_viguy.gif", :alt=>"This User Group is Sponsored by O'Reilly"}
+      %h2 Contact Us!
+      %p For more information, call Ryan at 503-750-8209 or Timmy 541-306-3374
+      %ul
+        %li
+          %a{:href => "#"} Join our e-mail list & forum
+        %li
+          %a{:href => "#"} Submit a job posting
+        %li
+          %a{:href => "#"} Other usergroups and resources
+    %footer.top-level
+      .copyright &copy 2010 Central Oregon Web Professionals Usergroup
+      .license No part of the content or the blog may reproduced without prior written permission.

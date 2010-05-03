@@ -22,4 +22,5 @@ Cowpu.controllers :posts do
     @posts = Post.all
     render 'posts/index'
   end
+
 end

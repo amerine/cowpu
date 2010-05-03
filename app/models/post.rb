@@ -23,4 +23,8 @@ class Post
     end
     self.slug = new_slug
   end
+
+  def self.recent_posts
+    self.all(:limit => 5, :order => [:created_at.desc]) 
+  end
 end
