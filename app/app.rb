@@ -19,6 +19,10 @@ class Cowpu < Padrino::Application
     # layout  :my_layout          # Layout can be in views/layouts/foo.ext or views/foo.ext (default :application)
     #
   end
+
+  before do
+    @recent = Post.recent_posts
+  end
   
   get '/' do
     render 'base/index'

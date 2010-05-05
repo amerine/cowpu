@@ -27,7 +27,7 @@
     %aside
       %h2 Latest
       %ul.latest
-        -Post.recent_posts.each do |p|
+        -@recent.each do |p|
           %li
             %a{:href=>"/#{p.slug}"} #{p.title}
       %h2 Badges & O'Reilly Love

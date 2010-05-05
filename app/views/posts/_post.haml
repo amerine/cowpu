@@ -1,3 +1,6 @@
-.post
-  %h2=post.title
-  =post.body
+%article
+  %h1
+    %a{:href=>"#{post.slug}"}=post.title
+  %cite{:class=>'l'} Published by #{post.account.name} <time datetime="#{post.created_at.strftime('%Y-%m-%d')}">#{post.created_at.strftime('%A, %d.%m.%Y')}</time>
+  .postbody
+    =post.body
