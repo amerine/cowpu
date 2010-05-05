@@ -23,3 +23,8 @@ gem 'padrino', "0.9.10"
 
 # Cowpu Gems
 gem 'feedtools'
+
+group :production do
+ gem 'bundler', '0.9.9'
+ gem 'pg'
+end
