@@ -5,10 +5,6 @@
 #   name = shell.ask("What's your name?")
 #   shell.say name
 #
-email     = shell.ask "Which email do you want use for loggin into admin?"
-password  = shell.ask "Tell me the password to use:"
-
-shell.say ""
 
 account = Account.create(:email => 'cowpu@gmail.com', :name => "Cowpu", :surname => "Ninja", :password => 'webgeeksunite247', :password_confirmation => 'webgeeksunite247', :role => "admin")
 
