@@ -5,8 +5,6 @@
     = stylesheet_link_tag 'cowpu'
     = javascript_include_tag 'jquery', 'application'
     = yield_content :include
-    = feed_tag(:rss, '/rss.xml',:title => "RSS")
-    = feed_tag(:atom, '/atom.xml',:title => "Atom")
     :plain
       <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
