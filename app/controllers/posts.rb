@@ -19,7 +19,7 @@ Cowpu.controllers :posts do
   # end
 
   get :index, :respond_to => [:html, :rss, :atom] do
-    @posts = Post.all(:order => 'created_at desc')
+    @posts = Post.all
     render 'posts/index' 
   end
 
