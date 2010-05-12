@@ -13,6 +13,7 @@ gem 'datamapper'
 gem 'dm-core'
 gem 'dm-validations'
 gem 'dm-tags'
+gem 'builder'
 
 # Test requirements
 gem 'rspec', :group => "test", :require => "spec"
@@ -25,7 +26,7 @@ gem 'padrino', "0.9.10"
 gem 'feedtools'
 
 group :production do
- gem 'bundler', '0.9.9'
- gem 'pg'
- gem 'do_postgres'
+  gem 'bundler', '0.9.9'
+  gem 'pg'
+  gem 'do_postgres'
 end

@@ -18,9 +18,10 @@ Cowpu.controllers :posts do
   #   "Hello world!"
   # end
 
-  get :index do
-    @posts = Post.all
-    render 'posts/index'
+  get :index, :respond_to => [:html, :rss, :atom] do
+    @posts = Post.all(:order => 'created_at desc')
+    render 'posts/index' 
   end
+
 
 end
