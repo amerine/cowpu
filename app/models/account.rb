@@ -13,9 +13,9 @@ class Account
   property :role,             String
 
   # Validations
-  validates_present      :email, :role
-  validates_present      :password,                          :if => :password_required
-  validates_present      :password_confirmation,             :if => :password_required
+  validates_presence_of      :email, :role
+  validates_presence_of      :password,                          :if => :password_required
+  validates_presence_of      :password_confirmation,             :if => :password_required
   validates_length       :password, :min => 4, :max => 40,   :if => :password_required
   validates_is_confirmed :password,                          :if => :password_required
   validates_length       :email,    :min => 3, :max => 100
