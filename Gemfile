@@ -28,5 +28,6 @@ gem 'feedtools'
 group :production do
   #gem 'bundler', '>0.9.9'
   gem 'pg'
+  gem 'dm-postgres-adapter'
   gem 'do_postgres'
 end
