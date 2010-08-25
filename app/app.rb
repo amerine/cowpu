@@ -47,7 +47,7 @@ class Cowpu < Padrino::Application
 
   get '/meetings' do
     tag = Tag.first(:name => 'meetings')
-    @recent = Post.all(:id => (tag.taggings.collect{|i| i.taggable_id}),:limit => 5, :order => [:created_at.desc])
+    @recent = Post.all(:id => (tag.taggings.collect{|i| i.taggable_id}),:limit => 5, :order => [:created_at.desc]) if tag
     render 'base/meetings'
   end
 

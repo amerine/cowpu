@@ -204,3 +204,9 @@ article ol {list-style:decimal;}
 
 /* Timmy Taint */
 div.postbody { display: block; clear: left; margin-top: 20px; padding-top: 20px;}
+
+div.group { width: 100%; clear: left; }
+div.group span.error{ padding: 20px 0px 10px 10px; font-size: 80%; color: red;}
+div.group input { width: 240px; float: left; margin: 10px 0px 10px; border: 1px solid #ddd; padding: 4px;}
+div.group textarea { width: 240px; height: 100px; float: left; margin: 10px 0px 10px; border: 1px solid #ddd;}
+div.group label { width: 80px; display: block; float: left; margin: 10px 0px 10px; font-weight: bold; }

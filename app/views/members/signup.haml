@@ -1,0 +1,35 @@
+%h2 COWPU Member Directory
+%p Please fill out this form to be listed in our member directory.  This is a great way to promote your company and get known in the community.  After your submission is reviewed to verify you are a *local*, we will list your information.  Thanks for signing up!
+
+-form_for :member, url(:members, :create), :class => :form do |f|
+  .group
+    %label Name
+    =f.text_field :name, :class => :text_field
+    =f.error_message_on :name
+
+  .group
+    %label Email
+    =f.text_field :email, :class => :text_field
+    =f.error_message_on :email
+    
+  .group
+    %label Employer
+    =f.text_field :employer
+    =f.error_message_on :employer
+
+  .group
+    %label Twitter
+    =f.text_field :twitter
+    =f.error_message_on :twitter
+
+  .group
+    %label Website
+    =f.text_field :website
+    =f.error_message_on :website
+    
+  .group
+    %label About You
+    =f.text_area :about
+
+  .group.buttons
+    %button Save
