@@ -22,7 +22,7 @@ namespace :deploy do
    
   desc "Symlink db config and public assets"    
   task :symlink_db_assets, :roles => :app, :except => {:no_release => true, :no_symlink => true} do
-    
+    run "ln -nfs #{shared_path}/db/production.db #{release_path}/db/"
   end
 end
 
