@@ -1,6 +1,6 @@
 set :keep_releases,       5
 set :application,         "cowpu"
-set :repository,          "git@github.com:timmyc/cowpu.git"
+set :repository,          "git://github.com/timmyc/cowpu.git"
 set :deploy_to,           "/home/timmy/cowpu"
 
 set :scm, :git

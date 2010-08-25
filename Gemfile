@@ -13,6 +13,7 @@ gem 'datamapper'
 gem 'dm-core'
 gem 'dm-validations'
 gem 'dm-tags'
+gem "dm-sqlite-adapter"
 gem 'builder'
 
 # Test requirements
