@@ -5,6 +5,7 @@
     = stylesheet_link_tag 'cowpu'
     = javascript_include_tag 'jquery', 'application'
     = yield_content :include
+    %link{ :rel => 'alternate', :type => 'application/rss+xml', :title => 'COWPU Blog RSS', :href => 'http://cowpu.com/system/feed.xml' }
     :plain
       <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>

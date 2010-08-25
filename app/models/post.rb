@@ -36,7 +36,7 @@ class Post
         xml.description "Central Oregon Web Professionals Usergroup."
         xml.link "http://cowpu.com"
 
-        self.all(:limit => 10,order => [ :created_at.desc ]).each do |post|
+        Post.all(:limit => 10,:order => [ :created_at.desc ]).each do |post|
           xml.item do
             xml.title post.title
             xml.link "http://cowpu.com/#{post.slug}"
