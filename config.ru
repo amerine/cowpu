@@ -1,5 +1,14 @@
-require ::File.dirname(__FILE__) + '/config/boot.rb'
 require ::File.dirname(__FILE__) + '/lib/konami.rb'
-use Rack::TrackingCode
 use Rack::KonamiCode
-run Padrino.application
+
+require 'cowpu'
+
+set :run, false
+set :environment, :production
+
+FileUtils.mkdir_p 'log' unless File.exists?('log')
+log = File.new("log/sinatra.log", "a+")
+$stdout.reopen(log)
+$stderr.reopen(log)
+
+run Sinatra::Application

@@ -1,18 +1,8 @@
-class Post
-  include DataMapper::Resource
-
-  # property <name>, <type>
-  property :id, Serial
-  property :title, String, :required => true
-  property :body, Text
-  property :slug, String
-  property :created_at, DateTime
-  property :account_id, Integer
-  before :create, :generate_slug
-  after :save, :build_rss
+class Post < ActiveRecord::Base
+  before_create :generate_slug
+  after_save :build_rss
   
   belongs_to :account
-  has_tags
   
   def generate_slug
     unique = false
@@ -36,7 +26,7 @@ class Post
         xml.description "Central Oregon Web Professionals Usergroup."
         xml.link "http://cowpu.com"
 
-        Post.all(:limit => 10,:order => [ :created_at.desc ]).each do |post|
+        Post.all(:limit => 10,:order => "created_at desc").each do |post|
           xml.item do
             xml.title post.title
             xml.link "http://cowpu.com/#{post.slug}"
@@ -52,6 +42,6 @@ class Post
   end
 
   def self.recent_posts
-    self.all(:limit => 5, :order => [:created_at.desc]) 
+    self.all(:limit => 5, :order => "created_at desc") 
   end
 end

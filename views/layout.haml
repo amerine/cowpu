@@ -2,9 +2,9 @@
 %html
   %head
     %title= [@title, "Central Oregon Web Professionals Usergroup"].compact.join(" | ")
-    = stylesheet_link_tag 'cowpu'
-    = javascript_include_tag 'jquery', 'application'
-    = yield_content :include
+    %link{ :rel => 'stylesheet', :type => 'text/css', :media => 'screen', :href => '/stylesheets/cowpu.css' } 
+    %script{ :type => 'text/javascript', :src => '/javascripts/jquery.js' }
+    %script{ :type => 'text/javascript', :src => '/javascripts/application.js' }
     %link{ :rel => 'alternate', :type => 'application/rss+xml', :title => 'COWPU Blog RSS', :href => 'http://cowpu.com/system/feed.xml' }
     :plain
       <!--[if lt IE 9]>

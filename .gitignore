@@ -1,2 +1,4 @@
 db/development.db
+tmp/*
+log/*
 .rvmrc
