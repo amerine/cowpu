@@ -1,15 +1,13 @@
-migration 2, :create_posts do
-  up do
-    create_table :posts do
-      column :id, Integer, :serial => true
-      column :title, "STRING"
-      column :body, "TEXT"
-      column :slug, "STRING"
-      column :created_at, "DATETIME"
+class CreatePosts < ActiveRecord::Migration
+  def self.up
+    create_table :posts do |t|
+      t.string :title, :slug
+      t.text :body
+      t.timetamps
     end
   end
-
-  down do
+  
+  def self.down
     drop_table :posts
   end
 end
