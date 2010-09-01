@@ -12,8 +12,10 @@ gem 'sinatra-activerecord'
 gem 'sqlite3-ruby'
 
 # Test requirements
-gem 'rspec', :group => "test", :require => "spec"
-gem 'rack-test', :require => 'rack/test', :group => 'test'
+group :test do
+  gem 'rspec', :require => "spec"
+  gem 'rack-test', :require => 'rack/test'
+end
 
 # Cowpu Gems
 gem 'feedtools'
