@@ -1,3 +1,4 @@
+.bundle
 db/development.db
 tmp/*
 log/*
