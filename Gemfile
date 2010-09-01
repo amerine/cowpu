@@ -7,8 +7,9 @@ gem 'thin' # or mongrel
 
 # Component requirements
 gem 'haml'
-gem 'activerecord'
+gem 'activerecord', '~> 2.3.8'
 gem 'sinatra-activerecord'
+gem 'sqlite3-ruby'
 
 # Test requirements
 gem 'rspec', :group => "test", :require => "spec"
