@@ -1,5 +1,4 @@
 .bundle
-db/development.db
-tmp/*
-log/*
-.rvmrc
+db/*.sqlite3
+log/*.log
+tmp/**/*
