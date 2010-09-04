@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
   
   belongs_to :account
   
-  named_scope :recent_posts, :limit => 5, :order => "created_at DESC"
+  scope :recent_posts, :limit => 5, :order => "created_at DESC"
   
   def generate_slug
     unique = false
