@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 3) do
+ActiveRecord::Schema.define(:version => 20100904063454) do
 
   create_table "accounts", :force => true do |t|
     t.string "name"
@@ -19,6 +19,17 @@ ActiveRecord::Schema.define(:version => 3) do
     t.string "crypted_password"
     t.string "salt"
     t.string "role"
+  end
+
+  create_table "members", :force => true do |t|
+    t.string   "email"
+    t.string   "name"
+    t.string   "employer"
+    t.string   "twitter"
+    t.string   "website"
+    t.text     "about"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "posts", :force => true do |t|
